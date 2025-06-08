@@ -1,0 +1,105 @@
+/* SearchWorker.css */
+.search-worker-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right, #e0f2fe, #f9fafb);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.search-worker-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-worker-form input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-worker-form input:focus {
+    border-color: #2563eb;
+}
+
+.search-worker-form button {
+    padding: 12px 20px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-worker-form button:hover {
+    background-color: #1d4ed8;
+}
+
+.worker-list {
+    width: 100%;
+    max-width: 800px;
+}
+
+.worker-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.worker-info {
+    flex-grow: 1;
+}
+
+.worker-buttons button {
+    margin-left: 10px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.worker-buttons .hire-btn {
+    background-color: #10b981;
+    color: white;
+}
+
+.worker-buttons .hire-btn:hover {
+    background-color: #059669;
+}
+
+.worker-buttons .delete-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.worker-buttons .delete-btn:hover {
+    background-color: #dc2626;
+}
+
+.loading,
+.error {
+    color: #1f2937;
+    font-weight: 500;
+}

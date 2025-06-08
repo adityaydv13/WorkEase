@@ -1,0 +1,197 @@
+ 
+
+/* === VARIABLES === */
+:root {
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary-bg: #e0f2fe;
+  --primary-bg-gradient: linear-gradient(135deg, #e0f2fe, #f9fafb);
+  --form-bg: #ffffff;
+  --text-dark: #1f2937;
+  --input-bg: #f3f4f6;
+  --input-border: #ccc;
+  --btn-bg: #2563eb;
+  --btn-hover-bg: #1d4ed8;
+  --dark-bg: #121212;
+  --dark-form-bg: #1f1f1f;
+  --dark-text: #f5f5f5;
+  --dark-input-bg: #2a2a2a;
+  --dark-input-border: #444;
+  --transition: 0.3s ease;
+}
+
+/* === GLOBAL CONTAINER === */
+.add-worker-container {
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--primary-bg-gradient);
+  padding: 20px;
+  transition: background-color var(--transition), color var(--transition);
+  position: relative; /* Needed for positioning toggle button */
+}
+
+.add-worker-container.dark {
+  background-color: var(--dark-bg);
+  background-image: none;
+  color: var(--dark-text);
+}
+
+/* === DARK MODE BUTTON === */
+.toggle-mode-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #facc15;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition);
+  z-index: 10;
+}
+
+.add-worker-container.dark .toggle-mode-btn {
+  color: #facc15;
+}
+
+/* === FORM BOX === */
+.add-worker-form {
+  background-color: var(--form-bg);
+  padding: 35px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.4s ease-in-out;
+  transition: background-color var(--transition), color var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.add-worker-container.dark .add-worker-form {
+  background-color: var(--dark-form-bg);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+}
+
+/* === TITLE === */
+.form-title {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.add-worker-container.dark .form-title {
+  color: var(--dark-text);
+}
+
+/* === INPUT FIELDS === */
+.input-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--input-bg);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  margin-bottom: 20px;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.input-icon input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #111827;
+}
+
+/* Dark Input Fields */
+.add-worker-container.dark .input-icon {
+  background-color: var(--dark-input-bg);
+  border-color: var(--dark-input-border);
+}
+
+.add-worker-container.dark .input-icon input {
+  color: var(--dark-text);
+  background-color: var(--dark-input-bg); /* FIX: prevent white flash in dark mode */
+}
+
+.input-icon svg {
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+.add-worker-container.dark .input-icon svg {
+  color: #bbbbbb;
+}
+
+/* === SELECT DROPDOWN === */
+.add-worker-form select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  font-size: 16px;
+  transition: border var(--transition), background-color var(--transition);
+}
+
+.add-worker-form select:focus {
+  border-color: #4f8bff;
+  outline: none;
+}
+
+.add-worker-container.dark select {
+  background-color: var(--dark-input-bg);
+  color: var(--dark-text);
+  border-color: var(--dark-input-border);
+}
+
+/* === SUBMIT BUTTON === */
+.submit-btn {
+  width: 100%;
+  background-color: var(--btn-bg);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition), transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--btn-hover-bg);
+  transform: translateY(-2px);
+}
+
+/* === ANIMATION === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ 
+@media (max-width: 600px) {
+  .add-worker-form {
+    padding: 30px 20px;
+  }
+
+  .toggle-mode-btn {
+    top: 10px;
+    right: 10px;
+    font-size: 1.3rem;
+  }
+}

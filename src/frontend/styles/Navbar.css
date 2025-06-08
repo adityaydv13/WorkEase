@@ -1,0 +1,117 @@
+.navbar {
+    background-color: #1c1c1c;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00b894;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-links a,
+.logout-btn {
+    color: #dfe6e9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px 15px;
+}
+
+.navbar-links a:hover,
+.logout-btn:hover {
+    color: #00cec9;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-links a,
+    .logout-btn {
+        width: 100%;
+        text-align: left;
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+    }
+}
+.welcome-text {
+  
+  color: #dfe6e9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px 15px;
+}
+.user-dropdown
+{
+    color: #dfe6e9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px 15px;  
+}
+.user-dropdown option{
+    color: #dfe6e9;
+    background-color: #1c1c1c;
+    padding: 8px 15px;
+}
+/* progile image css */
+
+.navbar-profile-image {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #151313;
+}
+/* on hover increaste the size of the image */
+.navbar-profile-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+/* upload profile button  */
+.upload-btn {
+    color: #038f34;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px 15px;
+}
