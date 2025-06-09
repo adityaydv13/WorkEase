@@ -64,8 +64,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/register.css';
 
-function Register() {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+ function Register() {
+  
+   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [profileImage, setProfileImage] = useState(null); // New state for file
   const navigate = useNavigate();
 

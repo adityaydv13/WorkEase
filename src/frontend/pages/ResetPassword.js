@@ -14,7 +14,7 @@ function ResetPassword() {
     e.preventDefault();
     try {
     // const token = localStorage.getItem('token');
-      const res = await axios.post(`http://localhost:5000/api/reset-password/${token}`, { password });
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/reset-password/${token}`, { password });
       setMsg(res.data.msg);
       setTimeout(() => navigate('/login'), 3000);
     } catch (err) {

@@ -14,7 +14,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use(cors({
-  origin:  '*', // Your deployed React frontend
+  // origin:  '*', // Your deployed React frontend
+  origin: ['https://workora.onrender.com'],
   credentials: true
 }));
 
