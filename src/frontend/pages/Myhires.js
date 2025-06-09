@@ -10,7 +10,7 @@ const Myhires = ({ refreshToggle }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/hires', {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/hires`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -26,7 +26,7 @@ const Myhires = ({ refreshToggle }) => {
   const deleteWorker = async (hireId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.delete(`http://localhost:5000/api/hires/${hireId}`, {
+      const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/hires/${hireId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -39,7 +39,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete('http://localhost:5000/api/users/delete', {
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/users/delete`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

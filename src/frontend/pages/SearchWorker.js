@@ -12,7 +12,7 @@ const SearchWorker = () => {
                 
 
             const token = localStorage.getItem('token');
-            const response = await axios.post(`http://localhost:5000/api/workers/hire/${workerId}`,
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/workers/hire/${workerId}`,
                 {},
                 {
                     headers: {
@@ -38,7 +38,7 @@ const SearchWorker = () => {
         setError(null);
 
         try {
-            const response =await axios.get(`http://localhost:5000/api/workers?search=${searchTerm}`);
+            const response =await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/workers?search=${searchTerm}`);
                setWorkers(response.data);
             
         } catch (err) {
