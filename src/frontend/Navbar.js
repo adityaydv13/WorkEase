@@ -65,7 +65,7 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
     formData.append('profileImage', file);
 
     try {
-      const res = await axios.put(`http://localhost:5000/api/update-profile-image/${userId}`, formData);
+      const res = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/update-profile-image/${userId}`, formData);
       alert(res.data.msg);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       setProfileImage(res.data.user.profileImage);
