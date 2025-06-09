@@ -86,7 +86,9 @@ function Register() {
       data.append('password', formData.password);
       if (profileImage) data.append('profileImage', profileImage); // Attach image
 
-      const res = await axios.post('http://localhost:5000/api/register', data, {
+
+      // const res = await axios.post('http://localhost:5000/api/register', data, {
+      const res=  axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/register`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
