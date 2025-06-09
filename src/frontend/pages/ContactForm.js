@@ -13,7 +13,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/send-query`, form);
+      const res = await axios.post('http://localhost:5000/send-query', form);
       if (res.data.success) {
         setStatus('Query sent successfully!');
         setForm({ name: '', email: '', message: '' });

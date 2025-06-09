@@ -1,10 +1,12 @@
 const User = require('../models/userModel');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const router = require('../routes/categoryRoutes');
 // const nodemailer = require('nodemailer');
 
 exports.register = async (req, res) => {
+  
+
   const { name, email, password } = req.body;
 
    const profileImage = req.file ? `http://localhost:5000/uploads/${req.file.filename}` : '';

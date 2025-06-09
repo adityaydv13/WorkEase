@@ -12,7 +12,7 @@ const Login = ({ setIsLoggedIn }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/login`, formData);
+            const res = await axios.post('http://localhost:5000/api/login', formData);
             console.log("Login Response:", res.data);
             localStorage.setItem('token', res.data.token);
 

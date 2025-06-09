@@ -41,7 +41,7 @@ const AddWorker = () => {
           Authorization: `Bearer ${token}`,
         },
       };
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/addworker`, formData, config);
+      const res = await axios.post('http://localhost:5000/api/addworker', formData, config);
       alert(res.data.msg);
       setFormData({
         name: '',

@@ -95,7 +95,7 @@ const WorkerCategoryPage = () => {
 
     // Fetch workers by category
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/workers/category/${categoryName.trim()}`, {
+      .get(`http://localhost:5000/api/workers/category/${categoryName.trim()}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then((res) => {
@@ -112,7 +112,7 @@ const WorkerCategoryPage = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/workers/hire/${workerId}`,
+        `http://localhost:5000/api/workers/hire/${workerId}`,
         {},
         {
           headers: {
