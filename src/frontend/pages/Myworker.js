@@ -28,7 +28,7 @@ const MyWorkerPage = () => {
 
   const deleteWorker = async (workerId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/worker/${workerId}`, {
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/worker/${workerId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

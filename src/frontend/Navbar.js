@@ -7,6 +7,8 @@ import '../frontend/styles/Navbar.css';
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     const navigate = useNavigate();
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const [userName, setUserName] = useState('');
       
     const [selectedValue, setSelectedValue] = useState("");
@@ -76,9 +78,23 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
   };
 
     return (
-        <nav className="navbar">
-            <div className="navbar-logo">WorkEase</div>
-            <div className="navbar-links">
+        // <nav className="navbar">
+        //     <div className="navbar-logo">WorkEase</div>
+        //     <div className="navbar-links">
+          <nav className="navbar">
+    <div className="navbar-top">
+      <div className="navbar-logo">WorkEase</div>
+      
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+    </div>
+
+    <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+
+      {/* utill here */}
                 <Link to="/home">Home</Link>
                 {isLoggedIn ? (
                     <>
@@ -163,6 +179,8 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
             )}
         </nav>
     );
+ 
+
 };
 
 export default Navbar;

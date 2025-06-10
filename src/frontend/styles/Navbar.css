@@ -89,6 +89,7 @@
     background-color: #1c1c1c;
     padding: 8px 15px;
 }
+
 /* progile image css */
 
 .navbar-profile-image {
@@ -114,4 +115,73 @@
     cursor: pointer;
     font-size: 1rem;
     padding: 8px 15px;
+}
+
+/* ////////////////////////////////////////////////////////// */
+
+
+ /* 🔼 New top wrapper for navbar layout */
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* 🔽 Hamburger icon styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #dfe6e9;
+  transition: 0.3s ease;
+}
+
+/* 🔁 Updated responsive styles */
+@media screen and (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 65px; /* height of navbar */
+    left: -100%;
+    flex-direction: column;
+    background-color: #1c1c1c;
+    width: 70%;
+    height: 100vh;
+    padding: 20px;
+    gap: 15px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+    border-right: 1px solid #2d2d2d;
+  }
+
+  .navbar-links.open {
+    left: 0;
+  }
+
+  .navbar-links a,
+  .logout-btn,
+  .user-dropdown {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .upload-btn {
+    margin-left: 10px;
+  }
 }
