@@ -95,12 +95,12 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
     <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
 
       {/* utill here */}
-                <Link to="/home">Home</Link>
+                <Link to="/home" onClick={() => setMenuOpen(false)}>Home</Link>
                 {isLoggedIn ? (
                     <>
-                        <Link to="/add-worker">Add Worker</Link>
-                        <Link to="/search-worker">Search Worker</Link>
-                        <Link to="/my-hires">My Hires</Link>
+                        <Link to="/add-worker" onClick={() => setMenuOpen(false)}>Add Worker</Link>
+                        <Link to="/search-worker" onClick={() => setMenuOpen(false)}>Search Worker</Link>
+                        <Link to="/my-hires" onClick={() => setMenuOpen(false)}>My Hires</Link>
                         {userName && <span className="welcome-text">Welcome, {userName}</span>}
                        {profileImage && ( <img
                                          src={profileImage}
@@ -118,6 +118,7 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
   onChange={(e) => {
     const value = e.target.value;
    setSelectedValue(value);
+    setMenuOpen(false); 
     setSelectedValue("");
     if (value === 'logout') {
       handleLogout();
@@ -165,8 +166,8 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
              </>
                 ) : (
                     <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
+                        <Link to="/login"  onClick={() => setMenuOpen(false)}>Login</Link>
+                        <Link to="/register" onClick={() => setMenuOpen(false)}>Register</Link>
                     </>
                 )}
             </div>
