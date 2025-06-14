@@ -1,48 +1,54 @@
-/* Container with gradient background, full viewport height, center aligned */
-.page-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #c3dbf9, #8a9edb);
-  padding: 16px;
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Card style box */
-.profile-card {
-  background: white;
-  padding: 32px 24px;
-  max-width: 400px;
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border: 1px solid #e2e8f0;
-  box-sizing: border-box;
+/* Main container: center items with wrap on mobile */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px;
+  background: linear-gradient(135deg, #c3dbf9, #8a9edb);
 }
 
-/* Title styling */
+/* Each profile card */
+.profile-card {
+  background: #ffffff;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card title */
 .profile-title {
   font-size: 1.8rem;
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-/* Details container */
+/* Profile details */
 .profile-details p {
   font-size: 1.05rem;
   color: #374151;
-  margin-bottom: 12px;
-}
-
-/* Bold label for each field */
-.label {
-  font-weight: 600;
-  color: #111827;
-  margin-right: 8px;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
 /* Delete button */
@@ -52,30 +58,35 @@
   color: white;
   border: none;
   padding: 12px 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.25s ease;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .delete-button:hover {
   background-color: #b91c1c;
 }
 
-/* Loading and empty states container */
-.loading-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f3f4f6;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  .profile-card {
+    padding: 24px 16px;
+    max-width: 90%;
+  }
 
-/* Loading and empty states text */
-.loading-text {
-  font-size: 1.3rem;
-  color: #6b7280;
+  .profile-title {
+    font-size: 1.5rem;
+  }
+
+  .profile-details p {
+    font-size: 1rem;
+  }
+
+  .delete-button {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
 }
