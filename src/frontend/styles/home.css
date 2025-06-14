@@ -15,7 +15,7 @@ body {
 }
 
 /* Gradient Animation */
-@keyframes gradientFlow {
+/* @keyframes gradientFlow {
   0% {
     background-position: 0% 50%;
   }
@@ -25,7 +25,7 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
+} */
 
 
 /* Container */
@@ -239,10 +239,10 @@ body {
 }
 
 .feature-card, .step, .category-card {
-  background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease; 
 }
 
 .feature-card:hover, .step:hover, .category-card:hover {
@@ -250,7 +250,7 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
 }
 
-
+ */
 
 
 
