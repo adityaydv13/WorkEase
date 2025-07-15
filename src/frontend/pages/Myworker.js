@@ -18,6 +18,12 @@ const MyWorkerPage = () => {
         }
       });
       setWorkers(res.data);
+
+      // Store the first worker's ID in localStorage
+       if (res.data.length > 0) {
+      localStorage.setItem("workerId", res.data[0]._id);
+    }
+
     } catch (err) {
       console.error('Error fetching workers:', err);
       setWorkers([]);

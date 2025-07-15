@@ -8,34 +8,36 @@ const SearchWorker = () => {
   const [error, setError] = useState(null);
 
   const hireWorker = async (workerId) => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/workers/hire/${workerId}`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      if (response.status === 200) {
-        alert("Worker hired successfully");
-
-        setWorkers((prevWorkers) =>
-          prevWorkers.map((worker) =>
-            worker._id === workerId ? { ...worker, status: "Hired" } : worker
-          )
-        );
-      } else {
-        alert("Failed to hire worker");
+  try {
+    const token = localStorage.getItem("token");
+    const response = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/api/workers/hire/${workerId}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    } catch (err) {
-      console.error(err);
-      alert("Error hiring worker");
+    );
+
+    if (response.status === 200) {
+      alert("Hire request sent and awaiting worker approval.");
+
+      setWorkers((prevWorkers) =>
+        prevWorkers.map((worker) =>
+          worker._id === workerId
+            ? { ...worker, status: "pending" }
+            : worker
+        )
+      );
+    } else {
+      alert("Failed to send hire request.");
     }
-  };
+  } catch (err) {
+    console.error(err);
+    alert(err.response?.data?.message || "Error sending hire request.");
+  }
+};
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -142,13 +144,22 @@ const SearchWorker = () => {
                       Status: {worker.status}
                     </span>
                   </div>
-                  <span
-                    className={`status-tag ${
-                      worker.status === "Hired" ? "hired" : "available"
-                    }`}
-                  >
-                    {worker.status === "Hired" ? "❌ Hired" : "✅ Available"}
-                  </span>
+                 <span
+  className={`status-tag ${
+    worker.status === "Hired"
+      ? "hired"
+      : worker.status === "pending"
+      ? "pending"
+      : "available"
+  }`}
+>
+  {worker.status === "Hired"
+    ? "❌ Hired"
+    : worker.status === "pending"
+    ? "🕒 Pending Approval"
+    : "✅ Available"}
+</span>
+
                 </div>
               </div>
               <div className="worker-buttons">

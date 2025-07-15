@@ -42,6 +42,14 @@ const AddWorker = () => {
         },
       };
       const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/addworker`, formData, config);
+
+if (res.data.worker?._id) {
+  localStorage.setItem("workerId", res.data.worker._id);
+  console.log("Worker ID saved to localStorage:", res.data.worker._id);
+} else {
+  alert("Worker ID not returned from server");
+}
+
       alert(res.data.msg);
       setFormData({
         name: '',

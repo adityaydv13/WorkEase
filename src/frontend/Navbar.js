@@ -4,9 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../frontend/styles/Navbar.css';
+ import { useRequests } from "../contexts/RequestsContext"; // Import the RequestsContext
+ 
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     const navigate = useNavigate();
+const { requests } = useRequests();
+ 
+
     const [menuOpen, setMenuOpen] = useState(false);
 
     const [userName, setUserName] = useState('');
@@ -18,13 +23,36 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     // image update 
     const [file, setFile] = useState(null);
 
-   useEffect(() => {
-  const userData = JSON.parse(localStorage.getItem('user'));
-  if (userData && userData.name) {
-    setUserName(userData.name);
-    setProfileImage(userData.profileImage);
-  }
-}, [isLoggedIn]);
+//    useEffect(() => {
+//   const userData = JSON.parse(localStorage.getItem('user'));
+//   if (userData && userData.name) {
+//     setUserName(userData.name);
+//     setProfileImage(userData.profileImage);
+//   }
+// }, []);
+useEffect(() => {
+  const handleUserUpdate = () => {
+    const userData = JSON.parse(localStorage.getItem('user'));
+    if (userData && userData.name) {
+      setUserName(userData.name);
+      setProfileImage(userData.profileImage);
+    } else {
+      setUserName('');
+      setProfileImage('');
+    }
+  };
+
+  // Load initially
+  handleUserUpdate();
+
+  // Listen for login/logout events
+  window.addEventListener('user-updated', handleUserUpdate);
+
+  return () => {
+    window.removeEventListener('user-updated', handleUserUpdate);
+  };
+}, []);
+
  // Re-run whenever login status changes
 
     const handleLogout = () => {
@@ -155,10 +183,28 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
   <option value="help">Help</option>
   <option value="logout">Logout</option>
 
+
 {/* add my worker  */}
 <option value="myworker">Remove Worker</option>
 
 </select>
+{/* worker request  */}
+{/* <Link
+  to="/worker/requests"
+  className={requests.length > 0 ? "pending-link" : "normal-link"}
+>
+  Hire Requests
+</Link> */}
+<Link
+  to="/worker/requests"
+  style={{
+    color: requests?.length > 0 ? 'red' : 'white',
+    fontWeight: requests?.length > 0 ? 'bold' : 'normal',
+  }}
+>
+  <span>🔔</span>
+  Requests
+</Link>
 
 {/* uptill here  */}
 

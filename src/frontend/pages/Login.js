@@ -15,12 +15,14 @@ const Login = ({ setIsLoggedIn }) => {
             const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/login`, formData);
                console.log("Login Response:", res.data);
             localStorage.setItem('token', res.data.token);
+ 
 
             // this is store name in localstoareg for accessing it to show user name at navbar 
         localStorage.setItem('user', JSON.stringify( res.data.user));
 
             setIsLoggedIn(true);
             navigate('/home');
+            window.location.reload();
         } catch (error) {
             alert(error.response?.data?.msg || 'Login Error');
         }

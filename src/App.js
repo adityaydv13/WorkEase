@@ -185,7 +185,9 @@ import Myhires from './frontend/pages/Myhires';
 import ContactForm from './frontend/pages/ContactForm';
 import WorkerCategoryPage from './frontend/pages/CategoryPage';
 import MyWorkerPage from './frontend/pages/Myworker';
+import WorkerRequests from './frontend/pages/WorkerRequest';
 
+ 
 const INACTIVITY_LIMIT = 5 * 60 * 1000; // 5 minutes
 
 const App = () => {
@@ -212,6 +214,9 @@ const App = () => {
       }, INACTIVITY_LIMIT);
     }
 
+
+
+    
     // Activity events
     window.addEventListener('mousemove', resetTimer);
     window.addEventListener('keydown', resetTimer);
@@ -228,6 +233,7 @@ const App = () => {
   }, []);
 
   return (
+    
     <Router>
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
@@ -253,6 +259,7 @@ const App = () => {
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/add-worker" element={isLoggedIn ? <AddWorker /> : <Navigate to="/login" />} />
         <Route path="/search-worker" element={isLoggedIn ? <SearchWorker /> : <Navigate to="/login" />} />
+<Route path="/worker/requests" element={<WorkerRequests />} />
 
         {/* Default route */}
         <Route path="*" element={<Navigate to={isLoggedIn ? "/" : "/login"} />} />
