@@ -111,7 +111,14 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
         //     <div className="navbar-links">
           <nav className="navbar">
     <div className="navbar-top">
-      <div className="navbar-logo">WorkEase</div>
+      {/* <img src="assets/logoWE" alt="" /> */}
+           
+          {/* <div className="navbar-logo">  WorkEase</div> */}
+<div className="navbar-logo">
+  <img src="assets/logoWE.png" alt="WorkEase Logo" id="logoWE" />
+  <span className="logo-text">WorkEase</span>
+</div>
+
       
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         <div className="bar"></div>

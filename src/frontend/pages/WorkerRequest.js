@@ -8,32 +8,7 @@ const WorkerRequests = () => {
   const token = localStorage.getItem("token");
   const workerId = localStorage.getItem("workerId"); // or get from context
 
-//  useEffect(() => {
-//   if (!workerId) {
-//     alert("Worker ID is not available in localStorage");
-//     setLoading(false);
-//     return;
-//   }
-
-//   const fetchRequests = async () => {
-//     try {
-//       const res = await axios.get(
-//         `${process.env.REACT_APP_BACKEND_URL}/api/hire/requests/${workerId}`,
-//         {
-//           headers: { Authorization: `Bearer ${token}` },
-//         }
-//       );
-//       setRequests(res.data);
-//     } catch (err) {
-//       console.error("Failed to fetch requests:", err);
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   fetchRequests();
-// }, [workerId, token]);
-
+ 
 useEffect(() => {
   const fetchRequests = async () => {
     try {

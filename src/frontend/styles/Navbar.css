@@ -1,6 +1,6 @@
 .navbar {
     background-color: #1c1c1c;
-    padding: 15px 30px;
+    padding: 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,10 +9,28 @@
     z-index: 1000;
 }
 
-.navbar-logo {
+/* .navbar-logo {
     font-size: 1.8rem;
     font-weight: bold;
     color: #00b894;
+} */
+ .navbar-logo {
+  display: flex;
+  align-items: center; /* vertically center items */
+  gap: 8px;             /* space between logo and text */
+  height: 100%;         /* ensure it fits within navbar */
+}
+
+#logoWE {
+  height: 30px;         /* set height to fit navbar */
+  width: auto; 
+ border-radius:10%;        /* maintain aspect ratio */
+}
+
+.logo-text {
+  font-size: 1.8rem;    /* adjust as needed */
+  font-weight: bold;
+  color: #00b894;          /* or whatever your theme is */
 }
 
 .navbar-links {
@@ -185,3 +203,5 @@
     margin-left: 10px;
   }
 }
+ 
+

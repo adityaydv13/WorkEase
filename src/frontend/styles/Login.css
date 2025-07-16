@@ -38,7 +38,7 @@
     border-color: #2563eb;
 }
 
-.login-form button {
+/* .login-form button {
     width: 100%;
     padding: 12px;
     background-color: #2563eb;
@@ -48,8 +48,53 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+} */
+
+/* .login-form button:hover {
+    background-color: #1d4ed8;
+} */
+
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
 }
 
-.login-form button:hover {
-    background-color: #1d4ed8;
+/* Press effect */
+.login-form button:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.2);
+}
+
+/* for spininning */
+
+
+button:disabled {
+    opacity: 0.85;
+    cursor: not-allowed;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid white;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
