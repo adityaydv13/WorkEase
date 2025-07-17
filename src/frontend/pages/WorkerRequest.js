@@ -97,7 +97,7 @@ useEffect(() => {
 })}</p>
         <div className="request-buttons">
           <button onClick={() => handleResponse(req._id, "accepted")} className="accept-btn">Accept</button>
-          <button onClick={() => handleResponse(req._id, "rejected")} className="reject-btn">Reject</button>
+          <button onClick={() => handleResponse(req._id, "rejected")} className="reject-btn">Reject & Delete</button>
         </div>
       </div>
     ))}

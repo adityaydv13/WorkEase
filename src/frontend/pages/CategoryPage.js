@@ -48,7 +48,7 @@ const WorkerCategoryPage = () => {
         }
       );
       if (response.status === 200) {
-        alert('Worker hired successfully');
+        alert('Request is send for approval ,waiting for worker approval.');
       } else {
         alert('Failed to hire worker');
       }

@@ -1,33 +1,29 @@
-/* === Base === */
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* background-color: #f9f9f9; */
-  background-color: whitesmoke;
-  color: #333;
-  line-height: 1.6;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* === Container === */
+/* Overall Container */
 .home-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  padding-bottom: 60px;
 }
 
-/* === Hero Section === */
+/* Hero Section */
 .hero-section {
-  text-align: center;
-  padding: 80px 20px 60px;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
+  background: linear-gradient(to right, #0099f7, #74c4f5);
   color: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 100px 20px 60px;
 }
 
 .hero-section h1 {
   font-size: 3rem;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .hero-section p {
@@ -35,78 +31,65 @@ body {
   margin-bottom: 30px;
 }
 
-/* CTA Button */
 .cta-button {
-  background-color: white;
-  color: #007acc;
-  border: none;
-  padding: 14px 28px;
-  font-size: 1rem;
-  border-radius: 30px;
+  background-color: #fff;
+  color: #0099f7;
   font-weight: 600;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cta-button:hover {
-  background-color: #f0f0f0;
+  background-color: #e0f7ff;
   transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* === How It Works Section === */
+/* How it Works Section */
 .how-it-works {
-  margin-top: 60px;
+  padding: 60px 20px;
+  background-color: #fff;
   text-align: center;
 }
 
 .how-it-works h2 {
-  font-size: 2rem;
-  color: #007acc;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
 }
 
 .steps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
-  margin-top: 30px;
+  gap: 30px;
 }
 
 .step {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #f1faff;
   border-radius: 12px;
   padding: 20px;
-  width: 250px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.step:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .step h3 {
-  font-size: 1.2rem;
-  color: #007acc;
+  font-size: 1.4rem;
   margin-bottom: 10px;
 }
 
-/* === Why Choose Section === */
+/* Why Choose */
 .why-choose {
-  margin-top: 80px;
+  padding: 60px 20px;
+  background-color: #e9f5fc;
   text-align: center;
 }
 
 .why-choose h2 {
   font-size: 2rem;
-  color: #007a5e;
   margin-bottom: 30px;
 }
 
@@ -114,60 +97,50 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 25px;
 }
 
 .feature-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
+  background-color: white;
   padding: 20px;
-  width: 220px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
 }
 
-.feature-card h4 {
-  color: #007acc;
-  margin-bottom: 10px;
-}
-
-/* === Categories Section === */
+/* Categories */
 .categories {
-  margin-top: 80px;
+  padding: 60px 20px;
+  background-color: #fff;
   text-align: center;
 }
 
 .categories h2 {
   font-size: 2rem;
-  color: #007a5e;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .category-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
+  gap: 25px;
 }
 
 .category-card {
-  width: 200px;
+  width: 220px;
   background-color: white;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: transform 0.2s ease;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
 }
 
 .category-card:hover {
@@ -175,58 +148,41 @@ body {
 }
 
 .category-card img {
-  width: 180px;
+  width: 100%;
   height: 160px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
 }
 
-/* === CTA Section === */
+.category-card p {
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* CTA Section */
 .cta-section {
-  margin-top: 80px;
-  padding: 40px 20px;
-  text-align: center;
-  background-color: #007acc;
+  background-color: #0099f7;
   color: white;
-  border-radius: 12px;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .cta-section h2 {
   font-size: 2rem;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .cta-section p {
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-/* === Footer === */
+/* Footer */
 .footer {
-  margin-top: 60px;
-  padding: 20px;
+  background-color: #333;
+  color: #ccc;
   text-align: center;
-  background-color: #007a5e;
-  color: white;
-  font-size: 0.95rem;
-  border-radius: 10px;
-}
-
-/* === Animations === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.page-fade-in {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 0.3s;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
 }
