@@ -154,7 +154,7 @@ const SearchWorker = () => {
   }`}
 >
   {worker.status === "Hired"
-    ? "❌ Hired"
+    ? " Hired"
     : worker.status === "pending"
     ? "🕒 Pending Approval"
     : "✅ Available"}
