@@ -180,6 +180,12 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
       navigate('/my-worker');
        setSelectedValue("");
     }
+    else if (value === 'nearby') {
+      // Navigate to My Worker page
+      navigate('/nearby-workers');
+       setSelectedValue("");
+    }
+
    }
     }
       >
@@ -188,6 +194,7 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
   <option value="profileupdate">Profile Update</option>
   <option value="DeleteUser">Delete Account</option>
   <option value="help">Help</option>
+   <option value="nearby">Nearby</option>
   <option value="logout">Logout</option>
 
 
@@ -195,25 +202,20 @@ const handleFileChange = (e) => setFile(e.target.files[0]);
 <option value="myworker">Remove Worker</option>
 
 </select>
-{/* worker request  */}
-{/* <Link
-  to="/worker/requests"
-  className={requests.length > 0 ? "pending-link" : "normal-link"}
->
-  Hire Requests
-</Link> */}
+ 
 <Link
   to="/worker/requests"
+  onClick={() => setMenuOpen(false)} 
   style={{
     color: requests?.length > 0 ? 'red' : 'white',
     fontWeight: requests?.length > 0 ? 'bold' : 'normal',
   }}
 >
-  <span>🔔</span>
+  <span>🔔</span> 
   Requests
 </Link>
 
-{/* uptill here  */}
+ 
 
              {/* <button onClick={handleLogout} className="logout-btn">Logout</button> */}
              </>

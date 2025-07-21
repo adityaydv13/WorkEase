@@ -186,7 +186,8 @@ import ContactForm from './frontend/pages/ContactForm';
 import WorkerCategoryPage from './frontend/pages/CategoryPage';
 import MyWorkerPage from './frontend/pages/Myworker';
 import WorkerRequests from './frontend/pages/WorkerRequest';
-
+// for location 
+import NearbyWorker from './frontend/pages/NearbyWorker'
  
 const INACTIVITY_LIMIT = 5 * 60 * 1000; // 5 minutes
 
@@ -263,6 +264,9 @@ const App = () => {
 
         {/* Default route */}
         <Route path="*" element={<Navigate to={isLoggedIn ? "/" : "/login"} />} />
+
+        <Route path="/nearby-workers" element={<NearbyWorker />} />
+        
       </Routes>
     </Router>
   );

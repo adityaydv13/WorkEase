@@ -1,0 +1,81 @@
+/* NearbyWorkers.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2e7d32;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #2e7d32;
+  padding-bottom: 10px;
+}
+
+.worker-card {
+  border: 1px solid #ddd;
+  border-left: 5px solid #4caf50;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.worker-card:hover {
+  transform: scale(1.02);
+}
+
+.worker-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 10px;
+}
+
+.worker-info {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .worker-card {
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .worker-name {
+    font-size: 1.2rem;
+  }
+
+  .worker-info, .location {
+    font-size: 0.95rem;
+  }
+}

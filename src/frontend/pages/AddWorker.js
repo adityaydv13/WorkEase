@@ -32,38 +32,101 @@ const AddWorker = () => {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const token = localStorage.getItem('token');
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/addworker`, formData, config);
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const token = localStorage.getItem('token');
+//       const config = {
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
+//       };
+//       const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/addworker`, formData, config);
 
-if (res.data.worker?._id) {
-  localStorage.setItem("workerId", res.data.worker._id);
-  console.log("Worker ID saved to localStorage:", res.data.worker._id);
-} else {
-  alert("Worker ID not returned from server");
-}
+// if (res.data.worker?._id) {
+//   localStorage.setItem("workerId", res.data.worker._id);
+//   console.log("Worker ID saved to localStorage:", res.data.worker._id);
+// } else {
+//   alert("Worker ID not returned from server");
+// }
 
-      alert(res.data.msg);
-      setFormData({
-        name: '',
-        phone: '',
-        address: '',
-        workertype: '',
-        availability: '',
-        status: 'active',
-      });
-      navigate('/home');
-     } catch (error) {
-      alert(error.response?.data?.msg || 'Error adding worker');
+//       alert(res.data.msg);
+//       setFormData({
+//         name: '',
+//         phone: '',
+//         address: '',
+//         workertype: '',
+//         availability: '',
+//         status: 'active',
+//       });
+//       navigate('/home');
+//      } catch (error) {
+//       alert(error.response?.data?.msg || 'Error adding worker');
+//     }
+//   };
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  // Modern check for geolocation support
+  if (!("geolocation" in navigator)) {
+    alert("Geolocation is not supported by your browser");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    async (position) => {
+      const { latitude, longitude } = position.coords;
+
+      try {
+        const token = localStorage.getItem('token');
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+
+        const dataToSend = {
+          ...formData,
+          latitude,
+          longitude,
+        };
+
+        const res = await axios.post(
+          `${process.env.REACT_APP_BACKEND_URL}/api/addworker`,
+          dataToSend,
+          config
+        );
+
+        if (res.data.worker?._id) {
+          localStorage.setItem("workerId", res.data.worker._id);
+          console.log("Worker ID saved to localStorage:", res.data.worker._id);
+        } else {
+          alert("Worker ID not returned from server");
+        }
+
+        alert(res.data.msg);
+        setFormData({
+          name: '',
+          phone: '',
+          address: '',
+          workertype: '',
+          availability: '',
+          status: 'active',
+        });
+        navigate('/home');
+      } catch (error) {
+        alert(error.response?.data?.message || 'Error adding worker');
+      }
+    },
+    (error) => {
+      console.error("Location error:", error);
+      alert("Please allow location access to register as a worker.");
     }
-  };
+  );
+};
+
 
   return (
     <div className={`add-worker-container ${darkMode ? 'dark' : ''}`}>
