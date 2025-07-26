@@ -136,8 +136,11 @@ const SearchWorker = () => {
                 )}
                 <div className="worker-details">
                   <strong>{worker.name}</strong>
+                  
                   <div className="tags">
                     <span className="skill-tag">{worker.workertype}</span>
+                    <p>Rating: {worker.averageRating ? `${worker.averageRating} ⭐` : 'No ratings yet'}</p>
+
                     <br />
                     <span className="availability-tag">
                       Availability: {worker.availability} days <br />
@@ -157,7 +160,7 @@ const SearchWorker = () => {
     ? " Hired"
     : worker.status === "pending"
     ? "🕒 Pending Approval"
-    : "✅ Available"}
+    : "Available"}
 </span>
 
                 </div>
