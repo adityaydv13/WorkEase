@@ -10,6 +10,11 @@ const Home = () => {
     { name: 'Electrician', img: '/assets/electrician.jpg' },
     { name: 'Carpenter', img: '/assets/carpenter.jpg' },
     { name: 'Cleaner', img: '/assets/cleaner.jpg' },
+      { name: 'Developer', img: '/assets/developer.jpg' },
+        { name: 'Artist', img: '/assets/artist.jpg' },
+          { name: 'AC', img: '/assets/ac-mech.jpg' },
+            { name: 'farm-work', img: '/assets/farm-worker.jpg' },
+
   ];
     return (
 

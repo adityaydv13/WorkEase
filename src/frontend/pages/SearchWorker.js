@@ -143,7 +143,7 @@ const SearchWorker = () => {
 
                     <br />
                     <span className="availability-tag">
-                      Availability: {worker.availability} days <br />
+                      Availability: {worker.availability}<br />
                       Status: {worker.status}
                     </span>
                   </div>
