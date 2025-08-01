@@ -32,38 +32,7 @@ const AddWorker = () => {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const token = localStorage.getItem('token');
-//       const config = {
-//         headers: {
-//           Authorization: `Bearer ${token}`,
-//         },
-//       };
-//       const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/addworker`, formData, config);
 
-// if (res.data.worker?._id) {
-//   localStorage.setItem("workerId", res.data.worker._id);
-//   console.log("Worker ID saved to localStorage:", res.data.worker._id);
-// } else {
-//   alert("Worker ID not returned from server");
-// }
-
-//       alert(res.data.msg);
-//       setFormData({
-//         name: '',
-//         phone: '',
-//         address: '',
-//         workertype: '',
-//         availability: '',
-//         status: 'active',
-//       });
-//       navigate('/home');
-//      } catch (error) {
-//       alert(error.response?.data?.msg || 'Error adding worker');
-//     }
-//   };
 
 
 const handleSubmit = async (e) => {
